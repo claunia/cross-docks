@@ -143,6 +143,12 @@ RUN cd /opt/gccsdk/build && \
 RUN cd /opt/gccsdk/build && \
     ../autobuilder/build -v libxslt
 
+RUN echo "list(APPEND CMAKE_SYSTEM_LIBRARY_PATH /opt/gccsdk/env/lib)" >> /opt/gccsdk/env/toolchain-riscos.cmake && \
+    echo "list(APPEND CMAKE_SYSTEM_INCLUDE_PATH /opt/gccsdk/env/include)" >> /opt/gccsdk/env/toolchain-riscos.cmake && \
+    echo "list(APPEND CMAKE_C_STANDARD_INCLUDE_DIRECTORIES /opt/gccsdk/env/include)" >> /opt/gccsdk/env/toolchain-riscos.cmake && \
+    echo "list(APPEND CMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES /opt/gccsdk/env/include)" >> /opt/gccsdk/env/toolchain-riscos.cmake && \
+    echo "list(APPEND CMAKE_PLATFORM_IMPLICIT_LINK_DIRECTORIES /opt/gccsdk/env/lib)" >> /opt/gccsdk/env/toolchain-riscos.cmake
+
 RUN ( \
     echo 'LogLevel DEBUG2'; \
     echo 'PermitRootLogin yes'; \
