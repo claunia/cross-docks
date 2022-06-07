@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
 LABEL description="Retro68 cross compiler environment for m68k, PowerPC and Carbon development."
 
