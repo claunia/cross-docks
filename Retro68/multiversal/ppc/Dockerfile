@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:kinetic
 
 LABEL description="Retro68 cross compiler environment with cmake alias for PowerPC development."
 
